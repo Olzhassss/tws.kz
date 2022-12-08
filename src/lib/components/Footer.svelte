@@ -1,41 +1,33 @@
 <script>
-    import logo from '$lib/assets/imgs/logo.svg';
-    // import fb from '../images/logo-facebook.png';
-    // import inst from '../images/logo-instagram.png';
-    // import ln from '../images/logo-linkedin.png';
+    import logo from '$lib/assets/imgs/logo-white.png';
     const soc_media_icons=[
         {
             "src":"/soc_media_icons/fb.svg",
             "alt":"facebook",
-            "href":"facebook.com"
+            "href":"https://www.facebook.com"
         },
         {
-            "src":"/soc_media_icons/fb.svg",
-            "alt":"facebook",
-            "href":"facebook.com"
-        },
-        {
-            "src":"/soc_media_icons/fb.svg",
-            "alt":"facebook",
-            "href":"facebook.com"
+            "src":"/soc_media_icons/ln.svg",
+            "alt":"linked-in",
+            "href":"https://www.linkedin.com"
         },
     ]
     let year = new Date().getFullYear();
 </script>
 
 <footer>
-    <div class="footer bg-gradient py-16 text-secondary">
-        <div class="container mx-auto py-12 items-center flex">
-            <img class="h-20  mr-6" src="{logo}" alt="">
-            <div class="">
-                <h3 class="font-bold">Казахстан</h3>
-                <p>Ул. , офис 000.</p>
+    <div class="footer bg-[#414141] py-6 md:py-16 text-gray-400 [&_a]:underline [&_a:hover]:decoration-transparent [&_a]:transition-all">
+        <div class="container mx-auto py-12 mb-12 items-center flex flex-col md:flex-row">
+            <img class="h-20 md:mr-12" src="{logo}" alt="">
+            <div class="my-12 text-center md:text-left md:my-0">
+                <h3><a href="mailto:sales@tws.kz" class="underline">sales@tws.kz</a></h3>
+                <br class="md:hidden">
+                <h3><a href="tel:+77781018007">+7-778-101-80-07</a></h3>
             </div>
-            <div class="ml-auto">
-                <h5 class="font-bold">email@gmail.com</h5>
+            <div class="mx-auto md:mr-0">
                 <div class="flex ">
                     {#each soc_media_icons as {src, alt, href} }
-                    <div class="">
+                    <div class="mx-1">
                         <a href="{href}">
                             <img src="{src}" alt="{alt}">
                         </a>
@@ -45,6 +37,9 @@
             </div>
         </div>
         <hr class="w-10/12 mx-auto border-gray-400">
-        <p class="container mx-auto pt-6">© {year} TWS</p>
+        <div class="container pt-6 mx-auto">
+            <span>© {year} Tech WinService</span>
+            <span class="float-right ">Developed by <a href="https://www.linkedin.com/in/olzhas-t-986ba323a/" class="">Olzhas</a></span>
+        </div>
     </div>
 </footer>

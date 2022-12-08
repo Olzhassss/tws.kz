@@ -47,21 +47,95 @@
 	}
 
 	h5{
-		@apply text-base
+		@apply text-base;
 	}
 
 	.bg-gradient{
-		background: linear-gradient(314deg, #460c6b, #071b63, #2b0852, #102c56, #1e053e);
+		background: linear-gradient(315deg, rgba(65,182,230,1) 0%, rgba(61,160,185,1) 19%, rgba(89,178,214,1) 37%, rgba(79,191,174,1) 53%, rgba(68,203,166,1) 69%, rgba(62,164,173,1) 85%, rgba(65,182,230,1) 100%);
 		background-size: 800% 800%;
-		animation: GradientBackground 20s ease-in-out infinite;
+		/* animation: GradientBackground 20s ease-in-out infinite; */
 		@apply text-white;
 	}
 	@-webkit-keyframes GradientBackground{0%{background-position:0 22%}50%{background-position:100% 79%}to{background-position:0 22%}}
 	@keyframes GradientBackground{0%{background-position:0 22%}50%{background-position:100% 79%}to{background-position:0 22%}}
+
+	li.nav-link{
+		@apply mx-3;
+		@apply hover:text-brandBlue;
+		@apply transition-all;
+		@apply duration-150;
+	}
+
+	header nav.active{
+		@apply right-0;
+	}	
+
+	div.circle{
+		@apply absolute;
+		@apply top-0;
+		@apply left-0;
+		@apply order-1;
+		@apply rounded-full;
+		@apply bg-white;
+		@apply w-72;
+		@apply h-72;
+		@apply text-center;
+		@apply flex;
+		@apply items-center;
+		@apply justify-center;
+		@apply transition-all;
+		@apply duration-300;
+		clip-path: polygon(0 50%, 50% 50%, 50% 100%, 50% 100%, 0% 100%);
+	}
+	div.circle p {
+		@apply m-8;
+		@apply text-secondary;
+		@apply opacity-0;
+		@apply transition-all;
+		@apply duration-300;
+	}
+	
+	div.circle.circle-1 {
+		@apply rotate-0;
+	}
+	div.circle.circle-2 {
+		@apply rotate-90;
+	}
+
+	div.circle:hover {
+		/* clip-path: polygon(0 50%, 50% 50%, 100% 0%, 100% 100%, 0% 100%); */
+		/* animation: 0.5s ease-in 0s 1 normal both expandCircle; */
+	}
+
+	div.circle:hover p {
+		@apply opacity-100;
+
+	}
+	@keyframes expandCircle {
+		0%{
+			clip-path: polygon(0 50%, 50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%);
+		}
+		20%{
+			clip-path: polygon(0 50%, 50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 0% 100%);
+		}
+		40%{
+			clip-path: polygon(0 50%, 50% 50%, 100% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%);
+		}
+		60%{
+			clip-path: polygon(0 50%, 50% 50%, 50% 0%, 50% 0%, 100% 0%, 100% 100%, 0% 100%);
+		}
+		80%{
+			clip-path: polygon(0 50%, 50% 50%, 0% 0%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+		}
+		100%{
+			clip-path: polygon(0 50%, 50% 50%, 0% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+		}
+	}
+	/* @keyframes GradientBackground{0%{background-position:0 22%}50%{background-position:100% 79%}to{background-position:0 22%}} */
 }
 
 
-@layer custom {
+@layer null {
 	*,*:before, *:after {
 		margin: 0;
 		padding: 0;
@@ -103,19 +177,5 @@
 	a:focus,
 	a:link{
 		color: inherit;
-	}
-
-
-	#topdiv {
-		margin: 0 10% 0 10%;
-		@apply text-white;
-	}
-
-	li.nav-link{
-		@apply mx-3;
-		@apply hover:text-blue-500;
-		@apply transition-all;
-		@apply duration-150;
-
 	}
 }

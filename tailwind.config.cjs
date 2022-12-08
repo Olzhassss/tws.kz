@@ -7,11 +7,13 @@ module.exports = {
 		extend: {
 			colors: {
 				primary: '#011f3d',
-				secondary: '#738494',
-				lightBackground:"#f2f2ea"
+				secondary: '#1f1f64',
+				lightBackground:"#f2f2ea",
+				brandBlue: "#4cb5e2",
+				footer:"#dfdfdc"
 			},
 			screens: {
-				// '3xl': '1620px',
+				'xs': '400px',
 			},
 		}
 	},
