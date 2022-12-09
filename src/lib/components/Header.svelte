@@ -56,18 +56,18 @@
 			</button>
 		</div>
 		<nav
-			class="w-1/3 mt-3 absolute -right-full transition-all duration-500 bg-white shadow-lg"
+			class="w-4/5 lg:w-1/3 mt-3 absolute -right-full transition-all duration-500 bg-white shadow-lg"
 			class:active={is_header_active}
 			style="height:{windowInnerHeight}px;"
 		>
-			<div class="flex flex-col justify-between h-full">
+			<div class="flex flex-col justify-between h-full overflow-y-auto">
 				<ul class="mt-0 [&_li]:p-4 [&_li]:text-lg">
 					<a on:click={burgerHandler} href="/#about"><li class="nav-link">О компании</li></a>
 					<a on:click={burgerHandler} href="/#services"><li class="nav-link">Услуги</li></a>
 					<a on:click={burgerHandler} href="/#projects"><li class="nav-link">Проекты</li></a>
-					<a on:click={burgerHandler} href="/#vacancies"><li class="nav-link">Вакансии</li></a>
-					<a on:click={burgerHandler} href="/#contacts"><li class="nav-link">Контакты</li></a>
 					<a on:click={burgerHandler} href="/#partners"><li class="nav-link">Партнеры</li></a>
+					<a on:click={burgerHandler} href="/#vacancies"><li class="nav-link">Вакансии</li></a>
+					<a on:click={burgerHandler} href="/#contacts"><li class="nav-link">Связаться</li></a>
 				</ul>
 				<img src={icon} class="block mx-auto mb-[88px] " alt="logo icon" />
 			</div>
@@ -79,5 +79,5 @@
 	on:click={burgerHandler}
 	class="fixed w-full h-full bg-black {is_header_active
 		? 'opacity-20 z-30'
-		: 'opacity-0 -z-0'} left-0 top-0 transition-all"
+		: 'opacity-0 -z-10'} left-0 top-0 transition-all"
 />

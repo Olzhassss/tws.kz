@@ -6,24 +6,24 @@
 	// Услуги
 	const services = [
 		{
-			title: "Информационная и <span style='white-space:nowrap'>кибер-безопасность",
+			title: "Информационная и <span style='white-space:nowrap'>кибер-безопасность</span>",
 			text: 'Мы готовы обеспечить вашему проекту профессиональный уровень информационной и кибер-безопасности.',
-			src: 'svg.svg'
+			src: 'services/cyber-security.svg'
 		},
 		{
 			title: 'IT-консалтинг',
 			text: 'ИТ-консалтинг — проектно-ориентированная деятельность, связанная с информационной поддержкой бизнес-процессов, позволяющая дать независимую экспертную оценку эффективности использования информационных технологий.',
-			src: 'svg.svg'
+			src: 'services/it-consulting.svg'
 		},
 		{
 			title: 'Поставка программного и аппаратного обеспечения',
 			text: 'Мы занимаемся поставкой качественного программного и аппаратного обеспечения в любое время по всему Казахстану.',
-			src: 'svg.svg'
+			src: 'services/software-shipment.svg'
 		},
 		{
 			title: 'Услуги внедрения и системной интеграции',
 			text: 'Мы обеспечим внедрение и системную интеграцию новых технологий в готовый проект, а также окажем техническую поддержку и сопровождение до конца процесса.',
-			src: 'svg.svg'
+			src: 'services/integration.svg'
 		}
 	];
 	// Партнеры
@@ -246,11 +246,11 @@
 						class="relative group overflow-x-hidden mx-4 sm:text-sm md:text-base rounded-md bg-white h-full hover:bg-slate-600 transition-all duration-700 ease-in"
 					>
 						<div class="flex flex-col h-full p-4 lg:p-8">
-							<img src="/{src}" alt="service icon" class="min-w-[50%] self-center" />
+							<img src="/{src}" alt="service icon" class="w-[50%] self-center" />
 							<h3 class="font-bold my-auto block">{@html title}</h3>
 						</div>
 						<div
-							class="absolute top-0 left-0 w-full h-full p-8 transition-all duration-500  translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 bg-lightBackground text-secondary overflow-auto"
+							class="absolute top-0 left-0 w-full h-full p-8 transition-all duration-500  translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 bg-lightBackground text-secondary overflow-y-auto md:custom-scrollbar"
 						>
 							<h3 class="font-bold">{@html title}</h3>
 							<p>{text}</p>
@@ -427,14 +427,18 @@
 		>
 	</div>
 	<div
-		class="fixed bg-opacity-70 bg-slate-500 h-full w-full top-0 left-0 transition-all {is_form_active
+		class="fixed bg-opacity-70 bg-slate-500 h-full w-full top-0 left-0 transition-all overflow-y-auto {is_form_active
 			? 'z-50'
 			: 'opacity-0 -z-10'}"
 	>
+		<button class="w-full h-full fixed z-0" on:click={deactivateForm} />
 		<div
-			class="w-4/5 h-3/4 mx-auto mt-24 bg-lightBackground rounded-lg text-secondary relative p-12"
+			class="w-full xs:w-[90%] lg:w-4/5 mx-auto my-12 sm:mt-24 p-8 sm:p-12 bg-lightBackground rounded-lg text-secondary relative"
 		>
-			<button on:click={deactivateForm} class="absolute right-5 top-5 w-8 h-8 group">
+			<button
+				on:click={deactivateForm}
+				class="absolute right-2 top-2 md:right-5 md:top-5 w-8 h-8 group"
+			>
 				<span
 					class="transition-all absolute left-0 w-8 h-0.5 bg-black -rotate-45 group-hover:bg-brandBlue"
 				/>
@@ -442,9 +446,9 @@
 					class="transition-all absolute left-0 w-8 h-0.5 bg-black rotate-45 group-hover:bg-brandBlue"
 				/>
 			</button>
-			<div class="mb-10">
+			<div class="lg:mb-10">
 				<div class="relative">
-					<h2 class="text-center font-light mb-12">Отправьте нам письмо!</h2>
+					<h2 class="text-center font-light mb-4 lg:mb-12">Отправьте нам письмо!</h2>
 					<form
 						action="/form"
 						class="flex flex-col [&_input]:my-2 [&_label]:font-bold"
@@ -452,7 +456,7 @@
 					>
 						<label for="email">Ваша электронная почта</label>
 						<input
-							class="w-96 p-2 rounded-sm"
+							class="w-full lg:w-96 p-2 rounded-sm"
 							aria-label="email"
 							type="email"
 							name="email"
@@ -462,7 +466,7 @@
 						/>
 						<label for="heading">Заголовок письма</label>
 						<input
-							class="w-96 p-2 rounded-sm"
+							class="w-full lg:w-96 p-2 rounded-sm"
 							aria-label="heading"
 							type="text"
 							name="heading"
@@ -472,7 +476,7 @@
 						<label for="text">Содержание письма</label>
 						<textarea
 							class="w-full p-2 rounded-sm my-2"
-							rows="10"
+							rows="5"
 							maxlength="1000"
 							aria-label="text"
 							name="text"
@@ -480,14 +484,14 @@
 						/>
 						<input
 							type="submit"
-							class="self-center text-center px-12 py-2 w-48 rounded-md bg-white hover:bg-slate-100 transition-all disabled:bg-slate-200"
+							class="self-center text-center mt-max px-12 py-2 w-48 rounded-md bg-white hover:bg-slate-100 transition-all disabled:bg-slate-200"
 							value={disabled ? '' : 'Отправить'}
 							{disabled}
 						/>
 						<div
 							class="w-36 h-36 flex align-center transition-opacity duration-300 animate-spin bg-footer rounded-full absolute top-1/2 self-center {disabled
 								? 'opacity-100'
-								: 'opacity-0'} "
+								: 'opacity-0 -z-10'} "
 						>
 							<img src={icon} class="w-36" alt="Loading" />
 						</div>

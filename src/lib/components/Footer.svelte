@@ -39,12 +39,12 @@
 			</div>
 		</div>
 		<hr class="w-10/12 mx-auto border-gray-400" />
-		<div class="container pt-6 mx-auto">
+		<div class="leading-loose container pt-6 mx-auto">
 			<span>© {year} Tech WinService</span>
-			<span class="float-right "
-				>Developed by <a href="https://www.linkedin.com/in/olzhas-t-986ba323a/" class="">Olzhas</a
-				></span
-			>
+			<br class="sm:hidden" />
+			<span class="sm:float-right"
+				>Developed by <a href="https://www.linkedin.com/in/olzhas-t-986ba323a/" class="">Olzhas</a>
+			</span>
 		</div>
 	</div>
 </footer>
