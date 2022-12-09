@@ -66,7 +66,7 @@ const projects=[
     {
         "title":"Название проекта",
         "description":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores cum rem voluptatibus aliquam nam delectus expedita. Quisquam ratione similique dolore necessitatibus, reprehenderit suscipit nesciunt quod culpa ipsam temporibus tempora.",
-        "src":"/software.svg"
+        "src":"/projects/software.svg"
     },
     {
         "title":"Название проекта",
@@ -76,7 +76,7 @@ const projects=[
     {
         "title":"Название проекта",
         "description":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores cum rem voluptatibus aliquam nam delectus expedita. Quisquam ratione similique dolore necessitatibus, reprehenderit suscipit nesciunt quod culpa ipsam temporibus tempora.",
-        "src":"/software.svg"
+        "src":"/projects/software.svg"
     },
 ];
 // Вакансии
@@ -162,7 +162,7 @@ async function handleSubmit(e) {
         body: data
     })
     const result = deserialize(await response.text());
-    console.log(result)
+
     if (result.type === 'success') {
         alert("Письмо успешно отправлено!")
         applyAction(result);

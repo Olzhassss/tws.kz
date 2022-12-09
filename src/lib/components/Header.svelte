@@ -22,9 +22,9 @@
                 <li class="nav-link"><a href="/#about">О компании</a></li>
                 <li class="nav-link"><a href="/#services">Услуги</a></li>
                 <li class="nav-link"><a href="/#projects">Проекты</a></li>
-                <li class="nav-link"><a href="/#vacancies">Вакансии</a></li>
-                <li class="nav-link"><a href="/#contacts">Контакты</a></li>
                 <li class="nav-link"><a href="/#partners">Партнеры</a></li>
+                <li class="nav-link"><a href="/#vacancies">Вакансии</a></li>
+                <li class="nav-link"><a href="/#contacts">Связаться</a></li>
             </ul>
             <button class:active={is_header_active} on:click="{burgerHandler}" class="md:hidden h-[44px] w-12 flex items-center justify-center">
                 <span class="block w-8 h-0.5 bg-primary relative transition-all duration-200 {is_header_active? "rotate-45" : ""}"></span>

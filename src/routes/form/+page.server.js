@@ -1,6 +1,13 @@
 import { invalid, error } from "@sveltejs/kit";
-import * as nodemailer from "nodemailer"
+import * as nodemailer from "nodemailer";
 import z from "zod";
+import email_html from "./mail2.html?raw";
+import {
+    SECRET_NODEMAILER_HOST,
+    SECRET_NODEMAILER_USER,
+    SECRET_NODEMAILER_PASS,
+    SECRET_NODEMAILER_FROM_EMAIL
+} from "$env/static/private";
 
 const emailSchema = z.object({
     email: z.string().email(),
@@ -15,7 +22,6 @@ export const actions = {
         const formObj = Object.fromEntries( formData );
         const result = emailSchema.safeParse(formObj);
 
-        console.log(result)
         if (!result.success){
             return invalid(500, {
                 error: true,
@@ -26,24 +32,30 @@ export const actions = {
         const { email, heading, text } = result.data
         
         let transporter = nodemailer.createTransport({
-            host: "smtp.yandex.ru",
+            host: SECRET_NODEMAILER_HOST,
             port: 465,
             secure: true, // true for 465, false for other ports
             auth: {
-              user: "OlzhasOlzhasov",
-              pass: "hwsnhzzwreyfvoyy",
+              user: SECRET_NODEMAILER_USER,
+              pass: SECRET_NODEMAILER_PASS,
             },
         });
 
         
         try {
-            let info = await transporter.sendMail({
-                from: '"Olzhas Olzhasov" <OlzhasOlzhasov@yandex.ru>', // sender address
-                to: '"Olzhas Olzhasov" <OlzhasOlzhasov@yandex.ru>', // list of receivers
+            let info1 = await transporter.sendMail({
+                from: SECRET_NODEMAILER_FROM_EMAIL, // sender address
+                to: SECRET_NODEMAILER_FROM_EMAIL, // list of receivers
                 subject: heading, // subject line
                 html: "<b>Мы получили письмо от "+email+" со следующим текстом:</b><br><br>"+text, // plain text body
             });
-            console.log(info);
+            await transporter.sendMail({
+                from: SECRET_NODEMAILER_FROM_EMAIL,
+                to: email,
+                subject: "Благодарим за обращение в Tech WinService!",
+                html: email_html
+            })
+            console.log(info1);
         } catch (err) {
             throw error(500, {
                 message: err
