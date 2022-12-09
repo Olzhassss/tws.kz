@@ -8,13 +8,13 @@ module.exports = {
 			colors: {
 				primary: '#011f3d',
 				secondary: '#1f1f64',
-				lightBackground:"#f2f2ea",
-				brandBlue: "#4cb5e2",
-				footer:"#dfdfdc"
+				lightBackground: '#f2f2ea',
+				brandBlue: '#4cb5e2',
+				footer: '#dfdfdc'
 			},
 			screens: {
-				'xs': '400px',
-			},
+				xs: '400px'
+			}
 		}
 	},
 	plugins: []
