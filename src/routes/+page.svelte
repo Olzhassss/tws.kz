@@ -84,10 +84,11 @@
 	];
 	// Вакансии
 	const vacancies = [
-		{
-			title: 'Java-developer',
-			description: 'Разработка корпоративных приложений на базе Java EE'
-		}
+		// Пример:
+		// {
+		// 	title: 'Java-developer',
+		// 	description: 'Разработка корпоративных приложений на базе Java EE'
+		// }
 	];
 
 	// Scripts:
@@ -333,12 +334,13 @@
 	</section>
 {/if}
 
-{#if vacancies.length > 0}
-	<section class="relative bg-lightBackground">
-		<span id="vacancies" class="absolute -top-20" />
-		<h1>Вакансии</h1>
-		<div class="container mx-auto">
-			<hr />
+
+<section class="relative bg-lightBackground">
+	<span id="vacancies" class="absolute -top-20" />
+	<h1>Вакансии</h1>
+	<div class="container mx-auto">
+		<hr />
+		{#if vacancies.length > 0}
 			{#each vacancies as { title, description }, i}
 				<a href="/#contacts">
 					<div
@@ -355,9 +357,12 @@
 				</a>
 				<hr />
 			{/each}
-		</div>
-	</section>
-{/if}
+		{:else}
+			<div class="text-center my-4">На данный момент открытых вакансий нет.</div>
+		{/if}
+	</div>
+</section>
+
 
 <section class="relative">
 	<span id="about" class="absolute -top-20" />
@@ -480,7 +485,7 @@
 							maxlength="1000"
 							aria-label="text"
 							name="text"
-							value="Пожалуйста, напишите ответ на данное письмо."
+							value="Пожалуйста, свяжитесь со мной по поводу ваших услуг."
 						/>
 						<input
 							type="submit"
