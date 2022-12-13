@@ -2,7 +2,7 @@
 	// Front-end data:
 	// Вакансии не будут отображаться, если vacancies = [ ] (= пустой список)
 	// Для отображения проектов нужно выставить значение переменной на "true":
-	const show_projects = true;
+	const show_projects = false;
 	// Услуги
 	const services = [
 		{
@@ -29,58 +29,49 @@
 	// Партнеры
 	const partners = [
 		{
-			title: 'Partner',
-			src: 'Cisco.png'
+			title: 'Asus',
+			src: 'Asus.png'
 		},
 		{
-			title: 'Partner',
-			src: 'Cisco.png'
+			title: 'Dell Technologies',
+			src: 'Dell.png'
 		},
 		{
-			title: 'Partner',
-			src: 'Cisco.png'
+			title: 'Fortinet',
+			src: 'Fortinet.svg'
 		},
 		{
-			title: 'Partner',
-			src: 'Cisco.png'
+			title: 'Barracuda',
+			src: 'Barracuda.svg'
 		},
 		{
-			title: 'Partner',
-			src: 'Cisco.png'
+			title: 'Hikvision',
+			src: 'Hikvision.png'
 		},
 		{
-			title: 'Partner',
-			src: 'Cisco.png'
+			title: 'Kehuatech',
+			src: 'Kehuatech.png'
 		},
 		{
-			title: 'Partner',
-			src: 'Cisco.png'
+			title: 'Socomec',
+			src: 'Socomec.png'
 		},
 		{
-			title: 'Partner',
-			src: 'Cisco.png'
+			title: 'Fujitsu',
+			src: 'Fujitsu.png'
 		}
 	];
 	// Проекты
 	const projects = [
+		// Пример:
 		{
 			title: 'Название проекта',
+		//	Описание
 			description:
 				'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores cum rem voluptatibus aliquam nam delectus expedita. Quisquam ratione similique dolore necessitatibus, reprehenderit suscipit nesciunt quod culpa ipsam temporibus tempora.',
+		//  // Путь к изображению относительно папки static/
 			src: '/projects/software.svg'
 		},
-		{
-			title: 'Название проекта',
-			description:
-				'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores cum rem voluptatibus aliquam nam delectus expedita. Quisquam ratione similique dolore necessitatibus, reprehenderit suscipit nesciunt quod culpa ipsam temporibus tempora.',
-			src: '/svg.svg'
-		},
-		{
-			title: 'Название проекта',
-			description:
-				'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, dolores cum rem voluptatibus aliquam nam delectus expedita. Quisquam ratione similique dolore necessitatibus, reprehenderit suscipit nesciunt quod culpa ipsam temporibus tempora.',
-			src: '/projects/software.svg'
-		}
 	];
 	// Вакансии
 	const vacancies = [
@@ -88,7 +79,7 @@
 		// {
 		// 	title: 'Java-developer',
 		// 	description: 'Разработка корпоративных приложений на базе Java EE'
-		// }
+		// },
 	];
 
 	// Scripts:
@@ -101,7 +92,6 @@
 	import svgBtn from '$lib/assets/imgs/svgBtn.svg';
 	import icon from '$lib/assets/imgs/favicon.svg';
 	import backgroundImg from '$lib/assets/imgs/background.jpg';
-	// import Selector from "$lib/components/Selector.svelte";
 
 	onMount(() => {
 		// Title text animation
@@ -195,14 +185,14 @@
 </script>
 
 <svelte:head>
-	<title>Tech WinService</title>
+	<title>TechWinService</title>
 	<link
 		href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
 		rel="stylesheet"
 	/>
 	<meta
 		name="description"
-		content="Информационно-технический консалтинг, ТОО ТехВинСервис, ВинСервис, Тех Вин Сервис"
+		content="Информационно-технический консалтинг, ТОО ТехВинСервис, ВинСервис, Тех Вин Сервис, TechWinService"
 	/>
 </svelte:head>
 
@@ -223,12 +213,9 @@
 					<p>
 						<span class="second">Мы – </span>
 						<br class="xs:hidden" />
-						<span class="third">Tech WinService</span>
+						<span class="third">TechWinService</span>
 					</p>
 				</div>
-				<!-- <div class="selector py-12 ml-auto mr-auto lg:mr-8">
-                    <Selector></Selector>
-                </div> -->
 			</div>
 		</div>
 	</div>
@@ -326,14 +313,12 @@
 					<div class="mt-8 md:mt-0">
 						<h2 class="font-bold">{title}</h2>
 						<p class="my-8">{description}</p>
-						<p>link?</p>
 					</div>
 				</div>
 			{/each}
 		</div>
 	</section>
 {/if}
-
 
 <section class="relative bg-lightBackground">
 	<span id="vacancies" class="absolute -top-20" />
@@ -351,7 +336,7 @@
 						<img
 							class="h-4 absolute -right-4 opacity-0 group-hover:-translate-x-4 group-hover:opacity-30"
 							src={svgBtn}
-							alt="see vacancy details"
+							alt="go to contacts"
 						/>
 					</div>
 				</a>
@@ -363,13 +348,12 @@
 	</div>
 </section>
 
-
 <section class="relative">
 	<span id="about" class="absolute -top-20" />
 	<h1>О нас</h1>
 	<div class="container mx-auto">
-		<div class="[&_p]:my-1">
-			<h2 class="font-bold mb-4 text-secondary">Tech WinService</h2>
+		<div class="[&_p]:my-1 mb-8">
+			<h2 class="font-bold mb-4 text-secondary">TechWinService</h2>
 			<h4>
 				Системный интегратор в области информационной безопасности, фирма по
 				информационно-техническому консалтингу
@@ -402,21 +386,7 @@
 				технической поддержки и сопровождения.
 			</p>
 		</div>
-		<div class="hidden grid-cols-3 gap-x-1 my-8 [&_h4]:font-light [&_h1]:font-bold text-secondary">
-			<div>
-				<h1 class="text-left mb-2">50+</h1>
-				<h4>поставщиков ПО</h4>
-			</div>
-			<div>
-				<h1 class="text-left mb-2">6+ лет</h1>
-				<h4>опыт работы на рынке</h4>
-			</div>
-			<div>
-				<h1 class="text-left mb-2">200+</h1>
-				<h4>сотрудников в компании</h4>
-			</div>
-		</div>
-		<div class="h-96 items-center flex">
+		<div class="hidden h-96 items-center">
 			<div class="text-center w-full">Картинки</div>
 		</div>
 	</div>
@@ -428,8 +398,10 @@
 		<h1>Мы готовы заняться вашей идеей</h1>
 		<button
 			class="block px-8 py-3 mx-auto text-xl transition-all duration-300 rounded-sm bg-brandBlue md:bg-transparent md:group-hover:bg-brandBlue group-hover:text-primary"
-			on:click={activateForm}>Свяжитесь с нами</button
+			on:click={activateForm}
 		>
+			Свяжитесь с нами
+		</button>
 	</div>
 	<div
 		class="fixed bg-opacity-70 bg-slate-500 h-full w-full top-0 left-0 transition-all overflow-y-auto {is_form_active
