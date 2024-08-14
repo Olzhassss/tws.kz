@@ -23,8 +23,8 @@
 			<img class="h-20 md:mr-12" src={logo} alt="" />
 			<div class="my-12 text-center md:text-left md:my-0">
 				<h3><a href="mailto:sales@tws.kz" class="underline">sales@tws.kz</a></h3>
-				<br class="md:hidden" />
-				<h3><a href="tel:+77781018007">+7-778-101-80-07</a></h3>
+				<!-- <br class="md:hidden" /> -->
+				<!-- <h3><a href="tel:+77781018007">+7-778-101-80-07</a></h3> -->
 			</div>
 			<div class="mx-auto md:mr-0">
 				<div class="flex ">
@@ -43,7 +43,7 @@
 			<span>© {year} Tech WinService</span>
 			<br class="sm:hidden" />
 			<span class="sm:float-right"
-				>Developed by <a href="https://www.linkedin.com/in/olzhas-t-986ba323a/" class="">Olzhas</a>
+				>Developed by <a href="https://www.linkedin.com/in/olzhas-toleutay/" class="">Olzhas</a>
 			</span>
 		</div>
 	</div>
